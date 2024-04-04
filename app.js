@@ -30,4 +30,9 @@ window.addEventListener("online", (event) => {
   console.log("The network connection is present");
 });
 
+async function registerSync() {
+  const swRegistration = await navigator.serviceWorker.ready;
+  swRegistration.sync.register("send-message");
+}
+
 registerServiceWorker();
