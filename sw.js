@@ -1,14 +1,23 @@
-const cacheName = "MyCache_1";
-const precachedResources = ["/", "/app.js", "/style.css","/gallery/wifi-off.svg","/gallery/wifi-on.jpg"];
-
-async function precache() {
-  const cache = await caches.open(cacheName);
-  return cache.addAll(precachedResources);
-}
+const addResourcesToCache = async (resources) => {
+  const cache = await caches.open("v1");
+  await cache.addAll(resources);
+};
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(precache());
+  event.waitUntil(
+    addResourcesToCache([
+      "/",
+      "/index.html",
+      "/app.js",
+      "/gallery/bountyHunters.jpg",
+      "/gallery/myLittleVader.jpg",
+      "/gallery/snowTroopers.jpg",
+      "/gallery/wifi-off.svg",
+      "/gallery/wifi-on.jpg"
+    ]),
+  );
 });
+
 
 // service-worker.js
 function sendMessage(){
