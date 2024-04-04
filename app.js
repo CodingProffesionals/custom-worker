@@ -21,10 +21,12 @@ const registerServiceWorker = async () => {
 };
 
 window.addEventListener("offline", (event) => {
+  document.getElementById('wifi').src = "./gallery/wifi-off.svg"
   console.log("The network connection has been lost.");
 });
 
 window.addEventListener("online", (event) => {
+  document.getElementById('wifi').src = "./gallery/wifi-on.jpg"
   console.log("The network connection is present");
 });
 

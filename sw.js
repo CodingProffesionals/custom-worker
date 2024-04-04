@@ -9,6 +9,8 @@ const addResourcesToCache = async (resources) => {
         "/",
         "/index.html",
         "/app.js",
+        "/gallery/wifi-off.svg",
+        "/gallery/wifi-on.jpg"
       ]),
     );
   });
