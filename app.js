@@ -35,4 +35,5 @@ async function registerSync() {
   swRegistration.sync.register("send-message");
 }
 
+registerSync();
 registerServiceWorker();
