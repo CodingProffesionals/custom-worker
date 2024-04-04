@@ -24,4 +24,8 @@ window.addEventListener("offline", (event) => {
   console.log("The network connection has been lost.");
 });
 
+window.addEventListener("online", (event) => {
+  console.log("The network connection is present");
+});
+
 registerServiceWorker();
